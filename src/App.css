@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.underline {
+  background-color: aquamarine;
+  color: antiquewhite;
+}
+
+.active {
+  background-color: blueviolet;
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.previous {
+  background-color: red;
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.next {
+  background-color: green;
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+a{text-decoration: none;}

@@ -23,6 +23,7 @@ function App() {
     <Router>
       <div>
         <h2>Example 2</h2>
+        <h2>learn react</h2>
         <nav>
           <ul>
             <li>

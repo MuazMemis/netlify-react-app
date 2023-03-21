@@ -9,7 +9,7 @@ function User() {
 
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/users/${id}`)
+      .get(`${process.env.REACT_APP_ENDPOINT}/users/${id}`)
       .then((res) => setUser(res.data))
       .finally(() => setIsLoading(false));
   }, [id]);

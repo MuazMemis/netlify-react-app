@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <div>
-        <h2>Example</h2>
+        <h2>Example 2</h2>
         <nav>
           <ul>
             <li>

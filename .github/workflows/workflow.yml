@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v1
       - run: yarn
       - run: yarn test
-      - run: yarn build
+      - run: ${{ secrets.REACT_APP_ENDPOINT }} yarn build
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete

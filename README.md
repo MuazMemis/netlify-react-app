@@ -27,7 +27,7 @@ surge
 
 ## AWS
 
-[Amazon EC2](https://13.53.194.40)
+[Amazon EC2 not https](http://13.53.194.40)
 
 ### Create instance
 
@@ -36,6 +36,53 @@ surge
 ```sh
 chmod 400 react-app.pem
 ssh -i react-app.pem ubuntu@13.53.194.40
+ssh -i react-app.pem ubuntu@13.50.249.190
+sudo apt-get install -f
+curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash - &&\ sudo apt-get install -y nodejs
+node -v
+npm -v
+git clone https://github.com/MuazMemis/react-deploy.git
+cd react-deploy
+sudo su # su ubuntu => for change ubuntu
+npm i -g yarn
+yarn
+vi .env # REACT_APP_ENDPOINT=https://jsonplaceholder.typicode.com
+yarn build
+apt-get install nginx -y
+chown -R $USER:$GROUP ~/.npm # yarn çalışmazsa... "EACCES: permission denied, open '/home/ubuntu/.config/yarn'"
+chown -R $USER:$GROUP ~/.config
+vi /etc/nginx/sites-available/default
+nginx -t
+service nginx reload
+```
+
+[Amazon EC2 Github Action auto deploy](http://13.53.194.40)
+
+- Github repo -> settings -> actions -> runner
+
+```sh
+    # Create a folder
+    mkdir actions-runner && cd actions-runner# Download the latest runner package
+    curl -o actions-runner-linux-x64-2.303.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.303.0/actions-runner-linux-x64-2.303.0.tar.gz# Optional: Validate the hash
+    echo "e4a9fb7269c1a156eb5d5369232d0cd62e06bec2fd2b321600e85ac914a9cc73  actions-runner-linux-x64-2.303.0.tar.gz" | shasum -a 256 -c# Extract the installer
+    tar xzf ./actions-runner-linux-x64-2.303.0.tar.gz
+
+    # Create the runner and start the configuration experience
+    ./config.sh --url https://github.com/MuazMemis/react-deploy --token AOWL636SOIGQY7YF5LVYDKDEDVB66# Last step, run it!
+    ./run.sh
+
+    sudo ./svc.sh install
+    sudo ./svc.sh start
+
+    # Use this YAML in your workflow file for each job
+    runs-on: self-hosted
+```
+
+- Github repo -> actions -> nodejs configure
+
+```sh
+chmod 400 react-app.pem
+ssh -i react-app.pem ubuntu@13.50.249.190
 sudo apt-get install -f
 curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash - &&\ sudo apt-get install -y nodejs
 node -v

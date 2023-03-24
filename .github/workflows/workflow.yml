@@ -1,4 +1,4 @@
-name: React Example
+name: React Example AWS S3
 
 on:
   push:
@@ -19,17 +19,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: yarn
-      # - run: yarn test
-      # - name: Print vars
-      #   run: |
-      #     echo "REACT_APP_ENDPOINT $REACT_APP_ENDPOINT"
-      #     echo "REACT_APP_ENDPOINT ${{ vars.REACT_APP_ENDPOINT }}"
-      # - name: Create .env
-      #   run: |
-      #     echo "REACT_APP_ENDPOINT=$REACT_APP_ENDPOINT" >> .env
+      - run: yarn test
+      - name: Create .env
+        run: |
+          echo "REACT_APP_ENDPOINT=$REACT_APP_ENDPOINT" >> .env
       - name: yarn build
-        run: yarn build
-        # run: REACT_APP_ENDPOINT=$REACT_APP_ENDPOINT yarn build
+        run: yarn build # run: REACT_APP_ENDPOINT=$REACT_APP_ENDPOINT yarn build
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete

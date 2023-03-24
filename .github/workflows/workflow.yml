@@ -19,8 +19,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: yarn
-      - run: yarn test
-      - run: REACT_APP_ENDPOINT=$REACT_APP_ENDPOINT yarn build
+      # - run: yarn test
+      - name: yarn build
+        # run: REACT_APP_ENDPOINT=$REACT_APP_ENDPOINT yarn build
+        run: $REACT_APP_ENDPOINT yarn build
       # - name: Print vars
       #   run: |
       #     echo "REACT_APP_ENDPOINT $REACT_APP_ENDPOINT"

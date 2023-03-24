@@ -29,6 +29,9 @@ jobs:
     - name: Setup yarn
       run: npm i -g yarn
     - run: yarn
+    - name: Create .env
+      run: |
+        echo "REACT_APP_ENDPOINT=$REACT_APP_ENDPOINT" >> .env
     - run: yarn build --if-present
     - run: yarn test
       env:

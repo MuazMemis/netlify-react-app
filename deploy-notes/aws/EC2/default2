@@ -4,7 +4,7 @@ server {
 
   # react app & front-end files
   location / {
-   root /home/ubuntu/react-deploy/build;
+   root /home/ubuntu/actions-runner/_work/react-deploy/react-deploy/build;
    try_files $uri /index.html;
   }
 }

@@ -83,23 +83,16 @@ service nginx reload
 ```sh
 chmod 400 react-app.pem
 ssh -i react-app.pem ubuntu@13.50.249.190
-sudo apt-get install -f
-curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash - &&\ sudo apt-get install -y nodejs
-node -v
-npm -v
-git clone https://github.com/MuazMemis/react-deploy.git
-cd react-deploy
-sudo su # su ubuntu => for change ubuntu
-npm i -g yarn
-yarn
-vi .env # REACT_APP_ENDPOINT=https://jsonplaceholder.typicode.com
-yarn build
-apt-get install nginx -y
-chown -R $USER:$GROUP ~/.npm # yarn çalışmazsa... "EACCES: permission denied, open '/home/ubuntu/.config/yarn'"
-chown -R $USER:$GROUP ~/.config
-vi /etc/nginx/sites-available/default
+sudo vi /etc/nginx/sites-available/default
 nginx -t
-service nginx reload
+service nginx reload # sudo service nginx restart
+sudo chmod +x home/
+sudo chmod +x home/ubuntu
+sudo chmod +x home/ubuntu
+sudo chmod +x home/ubuntu/actions-runner
+sudo chmod +x home/ubuntu/actions-runner/react-deploy
+sudo chmod +x home/ubuntu/actions-runner/react-deploy/react-deploy
+sudo chmod +x home/ubuntu/actions-runner/react-deploy/react-deploy/build
 ```
 
 [Amazon S3 buckets - Github Action auto deploy](http://react-example2.s3-website-us-west-1.amazonaws.com)

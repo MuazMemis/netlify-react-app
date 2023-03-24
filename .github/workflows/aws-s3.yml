@@ -1,4 +1,4 @@
-name: React Example AWS S3
+name: AWS S3
 
 on:
   push:

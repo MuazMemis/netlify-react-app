@@ -59,7 +59,7 @@ nginx -t
 service nginx reload
 ```
 
-[Amazon EC2 Github Action auto deploy](http://13.53.194.40)
+[Amazon EC2 Github Action auto deploy](http://13.50.249.190)
 
 <!-- TODO .env -->
 

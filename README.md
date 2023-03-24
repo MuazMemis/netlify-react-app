@@ -13,6 +13,8 @@ cd build
 surge
 ```
 
+---
+
 ## Netlify
 
 [React app](https://patika-react-app.netlify.app)
@@ -25,6 +27,8 @@ surge
 - [Refresh 404 not found => create public/\_redirects](https://patika-react-app.netlify.app/about)
 - [![Netlify Status](https://api.netlify.com/api/v1/badges/6a854854-fa53-4889-85fe-f993fcfb5601/deploy-status)](https://app.netlify.com/sites/patika-react-app/deploys)
 
+---
+
 ## AWS
 
 [Amazon EC2 not https](http://13.53.194.40)
@@ -36,7 +40,6 @@ surge
 ```sh
 chmod 400 react-app.pem
 ssh -i react-app.pem ubuntu@13.53.194.40
-ssh -i react-app.pem ubuntu@13.50.249.190
 sudo apt-get install -f
 curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash - &&\ sudo apt-get install -y nodejs
 node -v
@@ -57,6 +60,8 @@ service nginx reload
 ```
 
 [Amazon EC2 Github Action auto deploy](http://13.53.194.40)
+
+<!-- TODO .env -->
 
 - Github repo -> settings -> actions -> runner
 
@@ -94,6 +99,8 @@ sudo chmod +x home/ubuntu/actions-runner/react-deploy
 sudo chmod +x home/ubuntu/actions-runner/react-deploy/react-deploy
 sudo chmod +x home/ubuntu/actions-runner/react-deploy/react-deploy/build
 ```
+
+---
 
 [Amazon S3 buckets - Github Action auto deploy](http://react-example2.s3-website-us-west-1.amazonaws.com)
 

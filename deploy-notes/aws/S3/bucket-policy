@@ -1,18 +1,18 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "Statement1",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": [
-                "s3:*Object",
-                "s3:ListBucket"
-            ],
-            "Resource": [
-                "arn:aws:s3:::react-example2",
-                "arn:aws:s3:::react-example2/*"
-            ]
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": [
+        "s3:*Object",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::react-example2",
+        "arn:aws:s3:::react-example2/*"
+      ]
+    }
+  ]
 }

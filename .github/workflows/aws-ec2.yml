@@ -2,13 +2,12 @@ name: AWS EC2
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   # pull_request:
   #   branches: [ "main" ]
 
 jobs:
   build:
-
     runs-on: self-hosted
 
     strategy:
@@ -17,14 +16,14 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: Setup yarn
-      run: npm i -g yarn
-    - run: yarn
-    - run: yarn build --if-present
-    - run: yarn test
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - name: Setup yarn
+        run: npm i -g yarn
+      - run: yarn
+      - run: yarn build --if-present
+      - run: yarn test

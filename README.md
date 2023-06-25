@@ -39,7 +39,7 @@ surge
 
 ```sh
 chmod 400 react-app.pem
-ssh -i react-app.pem ubuntu@13.53.194.40
+ssh -i react-app.pem ubuntu@13.53.194.40 # details -> Public IPv4 address
 sudo apt-get install -f
 curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash - &&\ sudo apt-get install -y nodejs
 node -v
